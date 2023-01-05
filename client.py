@@ -67,8 +67,9 @@ class Client:
             return 0
 
     def on_connect(self, client, userdata, flags, rc):
-        client.subscribe("/humidity/#")
-        client.subscribe("/temperature/#")
+        print("Connected to Mosquitto")
+        client.subscribe("humidity/#")
+        client.subscribe("temperature/#")
 
 
     # The callback for when a publish message is received from the server.
@@ -76,7 +77,6 @@ class Client:
         payload = msg.payload.decode('utf-8')
         topic = str(msg.topic)
         topic_split = topic.split('/')
-        topic_split.pop(0)
 
         data_type = topic_split[0]
         plant_id = topic_split[1]

@@ -41,14 +41,14 @@ class Sensors:
 
         def publish(self):
             self.humidity += random.randint(-1, 1)
-            self.sensor.publish(f"/humidity/{self.plant_id}/{self.id}", self.humidity)
+            self.sensor.publish(f"humidity/{self.plant_id}/{self.id}", self.humidity)
 
     class TemperatureSensor(Sensor):
         temperature = 25
 
         def publish(self):
             self.temperature += random.randint(-1, 1)
-            self.sensor.publish(f"/temperature/{self.plant_id}/{self.id}", self.temperature)
+            self.sensor.publish(f"temperature/{self.plant_id}/{self.id}", self.temperature)
 
     def run(self):
         while True:
