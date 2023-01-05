@@ -1,71 +1,59 @@
 import json
 import random
+import time
 from abc import abstractmethod
+from hashlib import sha1, sha256
 from time import sleep
+from threading import Thread
+
 import paho.mqtt.client as mqtt
 
 
-class Sensor:
-    IP = "localhost"
-    sensor = None
-    topic = "piante"
+class Sensors:
+    sensors = []
 
-    def __init__(self, name, type):
-        self.name = name
-        self.type = type
-        self.sensor = mqtt.Client()
-        self.sensor.connect(self.IP, 1883, 60)
-
-    @abstractmethod
-    def publish(self):
-        pass
+    def __init__(self):
+        hum_sens_1 = self.HumiditySensor(1, 1)
+        hum_sens_2 = self.HumiditySensor(2, 2)
+        temp_sens_1 = self.TemperatureSensor(3, 1)
+        temp_sens_2 = self.TemperatureSensor(4, 2)
+        self.sensors = [hum_sens_1, hum_sens_2, temp_sens_1, temp_sens_2]
+        thread = Thread(target=self.run)
+        thread.start()
 
 
-class HumiditySensor(Sensor):
-    humidity = 50
+    class Sensor:
+        IP = "localhost"
+        sensor = None
 
-    def publish(self):
-        self.humidity += random.randint(-1,1)
-        payload = {
-            'name': self.name,
-            'type': self.type,
-            'humidity': self.humidity
-        }
-        self.sensor.publish(self.topic + "/humidity", json.JSONEncoder().encode(payload))
+        def __init__(self, id, plant_id):
+            self.id = id
+            self.plant_id = plant_id
+            self.sensor = mqtt.Client()
+            self.sensor.connect(self.IP, 1883, 60)
 
+        @abstractmethod
+        def publish(self):
+            pass
 
-class TemperatureSensor(Sensor):
-    temperature = 25
+    class HumiditySensor(Sensor):
+        humidity = 50
 
-    def publish(self):
-        self.temperature += random.randint(-1,1)
-        payload = {
-            'name': self.name,
-            'type': self.type,
-            'temperature': self.temperature
-        }
-        self.sensor.publish(self.topic + "/temperature", json.JSONEncoder().encode(payload))
+        def publish(self):
+            self.humidity += random.randint(-1, 1)
+            self.sensor.publish(f"/humidity/{self.plant_id}/{self.id}", self.humidity)
 
+    class TemperatureSensor(Sensor):
+        temperature = 25
 
-class Plant:
+        def publish(self):
+            self.temperature += random.randint(-1, 1)
+            self.sensor.publish(f"/temperature/{self.plant_id}/{self.id}", self.temperature)
 
-    def __init__(self, type, name):
-        self.type = type
-        self.name = name
-        self.humidity_sensor = HumiditySensor(self.name, self.type)
-        self.temperature_sensor = TemperatureSensor(self.name, self.type)
-
-    def update(self):
-        self.humidity_sensor.publish()
-        self.temperature_sensor.publish()
+    def run(self):
+        while True:
+            for sensor in self.sensors:
+                sensor.publish()
+            sleep(5)
 
 
-pianta1 = Plant("limone","pianta1")
-pianta2 = Plant("orchidea","pianta2")
-piante = [pianta1,pianta2]
-
-while True:
-    #print("in while")
-    for pianta in piante:
-        pianta.update()
-    sleep(5)
