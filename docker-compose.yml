@@ -1,0 +1,111 @@
+version: "3.8"
+
+services:
+
+  mosquitto:
+    image: eclipse-mosquitto:latest
+    container_name: mosquitto
+    volumes:
+      - ./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
+    restart: always
+    ports:
+      - 1883:1883
+      - 9001:9001
+    networks:
+      se4iot:
+        ipv4_address: 172.20.0.100
+
+  sensors:
+    image: iot-sensors
+    container_name: iot-sensors
+    build:
+      context: ./sensors/
+      dockerfile: Dockerfile
+    restart: always
+    networks:
+      se4iot:
+        ipv4_address: 172.20.0.101
+    depends_on:
+      - mosquitto
+
+  actuators:
+    image: iot-actuators
+    container_name: iot-actuators
+    build:
+      context: ./actuators/
+      dockerfile: Dockerfile
+    restart: always
+    networks:
+      se4iot:
+        ipv4_address: 172.20.0.105
+    depends_on:
+      - mosquitto
+
+  influxdb:
+    image: influxdb:latest
+    container_name: influxdb
+    restart: always
+    environment:
+      # Use these same configurations parameters in your telegraf configuration, mytelegraf.conf.
+      - DOCKER_INFLUXDB_INIT_MODE=setup
+      - DOCKER_INFLUXDB_INIT_USERNAME=admin
+      - DOCKER_INFLUXDB_INIT_PASSWORD=adminadmin
+      - DOCKER_INFLUXDB_INIT_ORG=univaq
+      - DOCKER_INFLUXDB_INIT_BUCKET=iot
+      - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=iotinfluxdbtoken
+    ports:
+      - '8086:8086'
+    networks:
+      se4iot:
+        ipv4_address: 172.20.0.103
+
+#  predictions:
+#    image: iot-predictions
+#    container_name: predictions
+#    restart: always
+#    ports:
+#      - 5000:5000
+#    networks:
+#      network:
+#        ipv4_address: 172.20.0.105
+
+  node-red:
+    image: nodered/node-red:latest
+    container_name: node-red
+    restart: always
+    ports:
+      - 1880:1880
+    networks:
+      se4iot:
+        ipv4_address: 172.20.0.102
+    volumes:
+      - ./node-red:/data
+    depends_on:
+      - mosquitto
+      - sensors
+      - influxdb
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    volumes:
+      - ./grafana:/var/lib/grafana
+      - ./grafana.ini:/etc/grafana/grafana.ini
+    environment:
+      - GF_SERVER_ROOT_URL=http://172.20.0.104:3000
+    restart: always
+    ports:
+      - 3000:3000
+    networks:
+      se4iot:
+        ipv4_address: 172.20.0.104
+    depends_on:
+      - influxdb
+
+
+networks:
+  se4iot:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

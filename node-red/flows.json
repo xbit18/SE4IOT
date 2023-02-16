@@ -1,0 +1,2075 @@
+[
+    {
+        "id": "18421dfe6e50d789",
+        "type": "tab",
+        "label": "Data Storage",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "beb02f101940a07a",
+        "type": "tab",
+        "label": "Automation",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "c86f5963f5037fab",
+        "type": "tab",
+        "label": "Dashboard",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "52edb7c9b84025f2",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "263cb68dcd37c7d7",
+        "type": "mqtt-broker",
+        "name": "mosquitto",
+        "broker": "172.20.0.100",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "f31dede1f911c00f",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "database",
+        "name": "influx_iot",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "http://172.20.0.103:8086",
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "8659f6337e2aa14d",
+        "type": "ui_tab",
+        "name": "Activate Actuators",
+        "icon": "",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "86bfb127d9da2edd",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#3187d3",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#3187d3",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#3187d3",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#70ace0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#3187d3",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Smart GreenHouse",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 9,
+                "gy": 15,
+                "cx": 10,
+                "cy": 10,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "9bb8e820c92bb0f4",
+        "type": "ui_group",
+        "name": "Soil Moisture Levels",
+        "tab": "44dd6fdc613cbd91",
+        "order": 1,
+        "disp": true,
+        "width": "24",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "0316f258592a1ce1",
+        "type": "ui_group",
+        "name": "Temperature",
+        "tab": "44dd6fdc613cbd91",
+        "order": 3,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "69285099928fb720",
+        "type": "ui_group",
+        "name": "Humidity",
+        "tab": "44dd6fdc613cbd91",
+        "order": 4,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e5be27229a7364d7",
+        "type": "ui_group",
+        "name": "Water Plants Manually",
+        "tab": "44dd6fdc613cbd91",
+        "order": 2,
+        "disp": true,
+        "width": "24",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "44dd6fdc613cbd91",
+        "type": "ui_tab",
+        "name": "Dashboard",
+        "icon": "",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "2a745e6b.07df92",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "e63bce2d.68925",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": true
+    },
+    {
+        "id": "e63bce2d.68925",
+        "type": "ui_tab",
+        "name": "Denon",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "5e48569f269d1961",
+        "type": "mqtt in",
+        "z": "18421dfe6e50d789",
+        "name": "",
+        "topic": "moisture/#",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "263cb68dcd37c7d7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 80,
+        "wires": [
+            [
+                "9c1f1b995a2d21bb"
+            ]
+        ]
+    },
+    {
+        "id": "68f33112aa8c5414",
+        "type": "mqtt in",
+        "z": "18421dfe6e50d789",
+        "name": "",
+        "topic": "humidity/#",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "263cb68dcd37c7d7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 160,
+        "wires": [
+            [
+                "df483de563af7fe0"
+            ]
+        ]
+    },
+    {
+        "id": "d6a929b0cce5c7c3",
+        "type": "mqtt in",
+        "z": "18421dfe6e50d789",
+        "name": "",
+        "topic": "temperature/#",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "263cb68dcd37c7d7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 240,
+        "wires": [
+            [
+                "d4118e92ad052d44"
+            ]
+        ]
+    },
+    {
+        "id": "612fc33c11d02880",
+        "type": "influxdb out",
+        "z": "18421dfe6e50d789",
+        "influxdb": "f31dede1f911c00f",
+        "name": "",
+        "measurement": "temperature",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "univaq",
+        "bucket": "iot",
+        "x": 620,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "fd7cabb11c97fea5",
+        "type": "debug",
+        "z": "18421dfe6e50d789",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "details",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "d4118e92ad052d44",
+        "type": "function",
+        "z": "18421dfe6e50d789",
+        "name": "function 2",
+        "func": "var split_topic = msg.topic.split('/')\nvar id = split_topic[1]\n\nmsg.details = { id: id, payload: msg.payload }\n\nmsg.payload = [{\n    value: msg.payload\n},\n{\n    sensor_id: parseInt(id)\n}];\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 240,
+        "wires": [
+            [
+                "fd7cabb11c97fea5",
+                "612fc33c11d02880"
+            ]
+        ]
+    },
+    {
+        "id": "df483de563af7fe0",
+        "type": "function",
+        "z": "18421dfe6e50d789",
+        "name": "function 3",
+        "func": "var split_topic = msg.topic.split('/')\nvar id = split_topic[1]\n\nmsg.details = { id : id, payload : msg.payload }\n\nmsg.payload = [{\n    value: msg.payload\n},\n{\n    sensor_id: parseInt(id)\n}];\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 160,
+        "wires": [
+            [
+                "26a7500f9ecc6423",
+                "af047f3df8a9d14d"
+            ]
+        ]
+    },
+    {
+        "id": "9c1f1b995a2d21bb",
+        "type": "function",
+        "z": "18421dfe6e50d789",
+        "name": "function 4",
+        "func": "var split_topic = msg.topic.split('/')\nvar id = split_topic[2]\n\nmsg.details = { id: id, payload: msg.payload }\n\nmsg.payload = [{\n    value: msg.payload\n},\n{\n    plant_id: parseInt(id)\n}];\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 80,
+        "wires": [
+            [
+                "df4f90e5516fe1ca",
+                "6d22c51fd7e7976c"
+            ]
+        ]
+    },
+    {
+        "id": "df4f90e5516fe1ca",
+        "type": "debug",
+        "z": "18421dfe6e50d789",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "details",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "26a7500f9ecc6423",
+        "type": "debug",
+        "z": "18421dfe6e50d789",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "details",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "6d22c51fd7e7976c",
+        "type": "influxdb out",
+        "z": "18421dfe6e50d789",
+        "influxdb": "f31dede1f911c00f",
+        "name": "",
+        "measurement": "moisture",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "univaq",
+        "bucket": "iot",
+        "x": 610,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "af047f3df8a9d14d",
+        "type": "influxdb out",
+        "z": "18421dfe6e50d789",
+        "influxdb": "f31dede1f911c00f",
+        "name": "",
+        "measurement": "humidity",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "univaq",
+        "bucket": "iot",
+        "x": 610,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "27970e02cbca6419",
+        "type": "influxdb in",
+        "z": "beb02f101940a07a",
+        "influxdb": "f31dede1f911c00f",
+        "name": "moisture1",
+        "query": "from(bucket: \"iot\")\n  |> range(start: -1m)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"moisture\")\n  |> filter(fn: (r) => r[\"_field\"] == \"value\")\n  |> filter(fn: (r) => r[\"plant_id\"] == \"1\")\n  |> sort(columns: [\"_time\"], desc: true)",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "univaq",
+        "x": 380,
+        "y": 100,
+        "wires": [
+            [
+                "74115c5a8cb80775"
+            ]
+        ]
+    },
+    {
+        "id": "151710b62fa5e1f0",
+        "type": "debug",
+        "z": "beb02f101940a07a",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "debug",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "aa0c63bbb3402ef7",
+        "type": "inject",
+        "z": "beb02f101940a07a",
+        "name": "",
+        "props": [],
+        "repeat": "60",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 70,
+        "y": 620,
+        "wires": [
+            [
+                "27970e02cbca6419",
+                "d54300cb2f528597",
+                "81466ca2c0d0c0dd",
+                "9bf97020d9f89f34",
+                "f53be4e88e96bb6a",
+                "1536658fb59d3458"
+            ]
+        ]
+    },
+    {
+        "id": "74115c5a8cb80775",
+        "type": "function",
+        "z": "beb02f101940a07a",
+        "name": "function 5",
+        "func": "var payload = msg.payload\nvar sum = 0\nvar counter = 0\nfor (let index = 0; index < payload.length; index++) {\n    const element = payload[index]['_value'];\n    sum = sum + element;\n    counter = counter + 1\n}\nmsg.payload = sum/counter\nmsg.debug = { '1': msg.payload }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 100,
+        "wires": [
+            [
+                "151710b62fa5e1f0",
+                "270e629c11e32a97"
+            ]
+        ]
+    },
+    {
+        "id": "270e629c11e32a97",
+        "type": "switch",
+        "z": "beb02f101940a07a",
+        "name": "moisture_threshold",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "50",
+                "vt": "num"
+            },
+            {
+                "t": "gt",
+                "v": "80",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 890,
+        "y": 40,
+        "wires": [
+            [
+                "cda0857165cd5625"
+            ],
+            [
+                "da0118b5feb33824"
+            ]
+        ]
+    },
+    {
+        "id": "cda0857165cd5625",
+        "type": "mqtt out",
+        "z": "beb02f101940a07a",
+        "name": "",
+        "topic": "waterpump/increase/1",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "263cb68dcd37c7d7",
+        "x": 1220,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "da0118b5feb33824",
+        "type": "mqtt out",
+        "z": "beb02f101940a07a",
+        "name": "",
+        "topic": "waterpump/decrease/1",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "263cb68dcd37c7d7",
+        "x": 1230,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "d54300cb2f528597",
+        "type": "influxdb in",
+        "z": "beb02f101940a07a",
+        "influxdb": "f31dede1f911c00f",
+        "name": "moisture2",
+        "query": "from(bucket: \"iot\")\n  |> range(start: -1m)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"moisture\")\n  |> filter(fn: (r) => r[\"_field\"] == \"value\")\n  |> filter(fn: (r) => r[\"plant_id\"] == \"2\")\n  |> sort(columns: [\"_time\"], desc: true)",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "univaq",
+        "x": 380,
+        "y": 300,
+        "wires": [
+            [
+                "fb5e6d8d212f8844"
+            ]
+        ]
+    },
+    {
+        "id": "8154ba2070803029",
+        "type": "debug",
+        "z": "beb02f101940a07a",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "debug",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "fb5e6d8d212f8844",
+        "type": "function",
+        "z": "beb02f101940a07a",
+        "name": "function 6",
+        "func": "var payload = msg.payload\nvar sum = 0\nvar counter = 0\nfor (let index = 0; index < payload.length; index++) {\n    const element = payload[index]['_value'];\n    sum = sum + element;\n    counter = counter + 1\n}\nmsg.payload = sum/counter\nmsg.debug = { '2': msg.payload }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 300,
+        "wires": [
+            [
+                "8154ba2070803029",
+                "f65ee1dfbf453db6"
+            ]
+        ]
+    },
+    {
+        "id": "f65ee1dfbf453db6",
+        "type": "switch",
+        "z": "beb02f101940a07a",
+        "name": "moisture_threshold",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "50",
+                "vt": "num"
+            },
+            {
+                "t": "gt",
+                "v": "80",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 890,
+        "y": 240,
+        "wires": [
+            [
+                "6522ca66443e0da9"
+            ],
+            [
+                "8ad3c8758433fc90"
+            ]
+        ]
+    },
+    {
+        "id": "6522ca66443e0da9",
+        "type": "mqtt out",
+        "z": "beb02f101940a07a",
+        "name": "",
+        "topic": "waterpump/increase/2",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "263cb68dcd37c7d7",
+        "x": 1220,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "8ad3c8758433fc90",
+        "type": "mqtt out",
+        "z": "beb02f101940a07a",
+        "name": "",
+        "topic": "waterpump/decrease/2",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "263cb68dcd37c7d7",
+        "x": 1230,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "81466ca2c0d0c0dd",
+        "type": "influxdb in",
+        "z": "beb02f101940a07a",
+        "influxdb": "f31dede1f911c00f",
+        "name": "moisture3",
+        "query": "from(bucket: \"iot\")\n  |> range(start: -1m)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"moisture\")\n  |> filter(fn: (r) => r[\"_field\"] == \"value\")\n  |> filter(fn: (r) => r[\"plant_id\"] == \"3\")\n  |> sort(columns: [\"_time\"], desc: true)",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "univaq",
+        "x": 380,
+        "y": 500,
+        "wires": [
+            [
+                "ac3828fdf9aa4afa"
+            ]
+        ]
+    },
+    {
+        "id": "4a131be3c73939e6",
+        "type": "debug",
+        "z": "beb02f101940a07a",
+        "name": "debug 6",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "debug",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "ac3828fdf9aa4afa",
+        "type": "function",
+        "z": "beb02f101940a07a",
+        "name": "function 7",
+        "func": "var payload = msg.payload\nvar sum = 0\nvar counter = 0\nfor (let index = 0; index < payload.length; index++) {\n    const element = payload[index]['_value'];\n    sum = sum + element;\n    counter = counter + 1\n}\nmsg.payload = sum/counter\nmsg.debug = { '3': msg.payload }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 500,
+        "wires": [
+            [
+                "4a131be3c73939e6",
+                "32a546536f59e4d4"
+            ]
+        ]
+    },
+    {
+        "id": "32a546536f59e4d4",
+        "type": "switch",
+        "z": "beb02f101940a07a",
+        "name": "moisture_threshold",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "50",
+                "vt": "num"
+            },
+            {
+                "t": "gt",
+                "v": "80",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 890,
+        "y": 440,
+        "wires": [
+            [
+                "e6565aac28e35ab4"
+            ],
+            [
+                "c0231319c61a7430"
+            ]
+        ]
+    },
+    {
+        "id": "e6565aac28e35ab4",
+        "type": "mqtt out",
+        "z": "beb02f101940a07a",
+        "name": "",
+        "topic": "waterpump/increase/3",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "263cb68dcd37c7d7",
+        "x": 1220,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "c0231319c61a7430",
+        "type": "mqtt out",
+        "z": "beb02f101940a07a",
+        "name": "",
+        "topic": "waterpump/decrease/3",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "263cb68dcd37c7d7",
+        "x": 1230,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "9bf97020d9f89f34",
+        "type": "influxdb in",
+        "z": "beb02f101940a07a",
+        "influxdb": "f31dede1f911c00f",
+        "name": "moisture4",
+        "query": "from(bucket: \"iot\")\n  |> range(start: -1m)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"moisture\")\n  |> filter(fn: (r) => r[\"_field\"] == \"value\")\n  |> filter(fn: (r) => r[\"plant_id\"] == \"4\")\n  |> sort(columns: [\"_time\"], desc: true)",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "univaq",
+        "x": 380,
+        "y": 700,
+        "wires": [
+            [
+                "fd16fca1e187c754"
+            ]
+        ]
+    },
+    {
+        "id": "5ef661f49656f316",
+        "type": "debug",
+        "z": "beb02f101940a07a",
+        "name": "debug 7",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "debug",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "fd16fca1e187c754",
+        "type": "function",
+        "z": "beb02f101940a07a",
+        "name": "function 8",
+        "func": "var payload = msg.payload\nvar sum = 0\nvar counter = 0\nfor (let index = 0; index < payload.length; index++) {\n    const element = payload[index]['_value'];\n    sum = sum + element;\n    counter = counter + 1\n}\nmsg.payload = sum/counter\nmsg.debug = {'4' : msg.payload}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 700,
+        "wires": [
+            [
+                "5ef661f49656f316",
+                "e542c94f4bb1f61a"
+            ]
+        ]
+    },
+    {
+        "id": "e542c94f4bb1f61a",
+        "type": "switch",
+        "z": "beb02f101940a07a",
+        "name": "moisture_threshold",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "50",
+                "vt": "num"
+            },
+            {
+                "t": "gt",
+                "v": "80",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 890,
+        "y": 640,
+        "wires": [
+            [
+                "8fbecf8a7959c912"
+            ],
+            [
+                "ea592122f1dd36b1"
+            ]
+        ]
+    },
+    {
+        "id": "8fbecf8a7959c912",
+        "type": "mqtt out",
+        "z": "beb02f101940a07a",
+        "name": "",
+        "topic": "waterpump/increase/4",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "263cb68dcd37c7d7",
+        "x": 1220,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "ea592122f1dd36b1",
+        "type": "mqtt out",
+        "z": "beb02f101940a07a",
+        "name": "",
+        "topic": "waterpump/decrease/4",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "263cb68dcd37c7d7",
+        "x": 1230,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "f53be4e88e96bb6a",
+        "type": "influxdb in",
+        "z": "beb02f101940a07a",
+        "influxdb": "f31dede1f911c00f",
+        "name": "temperature",
+        "query": "from(bucket: \"iot\")\n  |> range(start: -1m)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"temperature\")\n  |> filter(fn: (r) => r[\"_field\"] == \"value\")\n  |> sort(columns: [\"_time\"], desc: true)",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "univaq",
+        "x": 370,
+        "y": 960,
+        "wires": [
+            [
+                "f1ef9a5a35afe715"
+            ]
+        ]
+    },
+    {
+        "id": "b2a1fbb51a87f22e",
+        "type": "debug",
+        "z": "beb02f101940a07a",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "debug",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "f1ef9a5a35afe715",
+        "type": "function",
+        "z": "beb02f101940a07a",
+        "name": "function 9",
+        "func": "var payload = msg.payload\nvar sum = 0\nvar counter = 0\nfor (let index = 0; index < payload.length; index++) {\n    const element = payload[index]['_value'];\n    sum = sum + element;\n    counter = counter + 1\n}\nmsg.payload = sum/counter\nmsg.debug = { temperature : msg.payload }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 960,
+        "wires": [
+            [
+                "b2a1fbb51a87f22e",
+                "b28f3e72383a5333"
+            ]
+        ]
+    },
+    {
+        "id": "b28f3e72383a5333",
+        "type": "switch",
+        "z": "beb02f101940a07a",
+        "name": "temperature_threshold",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "20",
+                "vt": "num"
+            },
+            {
+                "t": "gt",
+                "v": "25",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 880,
+        "y": 900,
+        "wires": [
+            [
+                "f89ce8095cc52615"
+            ],
+            [
+                "f5ab543108f0dd37"
+            ]
+        ]
+    },
+    {
+        "id": "f89ce8095cc52615",
+        "type": "mqtt out",
+        "z": "beb02f101940a07a",
+        "name": "",
+        "topic": "conditioner/increase",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "263cb68dcd37c7d7",
+        "x": 1200,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "f5ab543108f0dd37",
+        "type": "mqtt out",
+        "z": "beb02f101940a07a",
+        "name": "",
+        "topic": "conditioner/decrease",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "263cb68dcd37c7d7",
+        "x": 1200,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "1536658fb59d3458",
+        "type": "influxdb in",
+        "z": "beb02f101940a07a",
+        "influxdb": "f31dede1f911c00f",
+        "name": "humidity",
+        "query": "from(bucket: \"iot\")\n  |> range(start: -1m)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"humidity\")\n  |> filter(fn: (r) => r[\"_field\"] == \"value\")\n  |> sort(columns: [\"_time\"], desc: true)",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "univaq",
+        "x": 360,
+        "y": 1180,
+        "wires": [
+            [
+                "8728af7f4ab03518"
+            ]
+        ]
+    },
+    {
+        "id": "71567475db300def",
+        "type": "debug",
+        "z": "beb02f101940a07a",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "debug",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "8728af7f4ab03518",
+        "type": "function",
+        "z": "beb02f101940a07a",
+        "name": "function 10",
+        "func": "var payload = msg.payload\nvar sum = 0\nvar counter = 0\nfor (let index = 0; index < payload.length; index++) {\n    const element = payload[index]['_value'];\n    sum = sum + element;\n    counter = counter + 1\n}\nmsg.payload = sum/counter\nmsg.debug = { humidity : msg.payload }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 1180,
+        "wires": [
+            [
+                "71567475db300def",
+                "aa121b1d46b2770f"
+            ]
+        ]
+    },
+    {
+        "id": "aa121b1d46b2770f",
+        "type": "switch",
+        "z": "beb02f101940a07a",
+        "name": "air_humidity_threshold",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "50",
+                "vt": "num"
+            },
+            {
+                "t": "gt",
+                "v": "60",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 880,
+        "y": 1120,
+        "wires": [
+            [
+                "55f939c634c0a2c2"
+            ],
+            [
+                "221ec35ef3182584"
+            ]
+        ]
+    },
+    {
+        "id": "55f939c634c0a2c2",
+        "type": "mqtt out",
+        "z": "beb02f101940a07a",
+        "name": "",
+        "topic": "humidifier/increase",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "263cb68dcd37c7d7",
+        "x": 1190,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "221ec35ef3182584",
+        "type": "mqtt out",
+        "z": "beb02f101940a07a",
+        "name": "",
+        "topic": "humidifier/decrease",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "263cb68dcd37c7d7",
+        "x": 1190,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "52e1e1baefb1ba97",
+        "type": "ui_gauge",
+        "z": "c86f5963f5037fab",
+        "name": "",
+        "group": "9bb8e820c92bb0f4",
+        "order": 0,
+        "width": "6",
+        "height": "6",
+        "gtype": "wave",
+        "title": "Plant 1",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#b30000",
+            "#00b500",
+            "#b30000"
+        ],
+        "seg1": "50",
+        "seg2": "80",
+        "diff": false,
+        "className": "",
+        "x": 860,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "a74936ef1063aaa2",
+        "type": "ui_gauge",
+        "z": "c86f5963f5037fab",
+        "name": "",
+        "group": "9bb8e820c92bb0f4",
+        "order": 0,
+        "width": "6",
+        "height": "6",
+        "gtype": "wave",
+        "title": "Plant 2",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#b30000",
+            "#00b500",
+            "#b30000"
+        ],
+        "seg1": "50",
+        "seg2": "80",
+        "diff": false,
+        "className": "",
+        "x": 860,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "1d857749dde97bbd",
+        "type": "inject",
+        "z": "c86f5963f5037fab",
+        "name": "",
+        "props": [],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 130,
+        "y": 400,
+        "wires": [
+            [
+                "e2b38c3d0178f060",
+                "93c434c45727b75c",
+                "6c7a8da83cd88208",
+                "0b50757b78fe30da",
+                "edd462ac71fb6220",
+                "77f95231f1348325"
+            ]
+        ]
+    },
+    {
+        "id": "e2b38c3d0178f060",
+        "type": "influxdb in",
+        "z": "c86f5963f5037fab",
+        "influxdb": "f31dede1f911c00f",
+        "name": "moisture1",
+        "query": "from(bucket: \"iot\")\n  |> range(start: -1m)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"moisture\")\n  |> filter(fn: (r) => r[\"_field\"] == \"value\")\n  |> filter(fn: (r) => r[\"plant_id\"] == \"1\")\n  |> sort(columns: [\"_time\"], desc: true)",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "univaq",
+        "x": 420,
+        "y": 180,
+        "wires": [
+            [
+                "d88eafa5379061a1"
+            ]
+        ]
+    },
+    {
+        "id": "d88eafa5379061a1",
+        "type": "function",
+        "z": "c86f5963f5037fab",
+        "name": "function 11",
+        "func": "var payload = msg.payload\nvar sum = 0\nvar counter = 0\nfor (let index = 0; index < payload.length; index++) {\n    const element = payload[index]['_value'];\n    sum = sum + element;\n    counter = counter + 1\n}\nmsg.payload = (sum/counter) | 0\nmsg.debug = { '1': msg.payload }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 180,
+        "wires": [
+            [
+                "52e1e1baefb1ba97"
+            ]
+        ]
+    },
+    {
+        "id": "93c434c45727b75c",
+        "type": "influxdb in",
+        "z": "c86f5963f5037fab",
+        "influxdb": "f31dede1f911c00f",
+        "name": "moisture2",
+        "query": "from(bucket: \"iot\")\n  |> range(start: -1m)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"moisture\")\n  |> filter(fn: (r) => r[\"_field\"] == \"value\")\n  |> filter(fn: (r) => r[\"plant_id\"] == \"2\")\n  |> sort(columns: [\"_time\"], desc: true)",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "univaq",
+        "x": 420,
+        "y": 320,
+        "wires": [
+            [
+                "8034b6b1a7405454"
+            ]
+        ]
+    },
+    {
+        "id": "8034b6b1a7405454",
+        "type": "function",
+        "z": "c86f5963f5037fab",
+        "name": "function 12",
+        "func": "var payload = msg.payload\nvar sum = 0\nvar counter = 0\nfor (let index = 0; index < payload.length; index++) {\n    const element = payload[index]['_value'];\n    sum = sum + element;\n    counter = counter + 1\n}\nmsg.payload = (sum / counter) | 0\nmsg.debug = { '1': msg.payload }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 320,
+        "wires": [
+            [
+                "a74936ef1063aaa2"
+            ]
+        ]
+    },
+    {
+        "id": "6c7a8da83cd88208",
+        "type": "influxdb in",
+        "z": "c86f5963f5037fab",
+        "influxdb": "f31dede1f911c00f",
+        "name": "moisture3",
+        "query": "from(bucket: \"iot\")\n  |> range(start: -1m)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"moisture\")\n  |> filter(fn: (r) => r[\"_field\"] == \"value\")\n  |> filter(fn: (r) => r[\"plant_id\"] == \"3\")\n  |> sort(columns: [\"_time\"], desc: true)",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "univaq",
+        "x": 420,
+        "y": 480,
+        "wires": [
+            [
+                "f03c87f598d972e6"
+            ]
+        ]
+    },
+    {
+        "id": "f03c87f598d972e6",
+        "type": "function",
+        "z": "c86f5963f5037fab",
+        "name": "function 13",
+        "func": "var payload = msg.payload\nvar sum = 0\nvar counter = 0\nfor (let index = 0; index < payload.length; index++) {\n    const element = payload[index]['_value'];\n    sum = sum + element;\n    counter = counter + 1\n}\nmsg.payload = (sum / counter) | 0\nmsg.debug = { '1': msg.payload }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 480,
+        "wires": [
+            [
+                "2ac2b8193acace83"
+            ]
+        ]
+    },
+    {
+        "id": "0b50757b78fe30da",
+        "type": "influxdb in",
+        "z": "c86f5963f5037fab",
+        "influxdb": "f31dede1f911c00f",
+        "name": "moisture4",
+        "query": "from(bucket: \"iot\")\n  |> range(start: -1m)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"moisture\")\n  |> filter(fn: (r) => r[\"_field\"] == \"value\")\n  |> filter(fn: (r) => r[\"plant_id\"] == \"4\")\n  |> sort(columns: [\"_time\"], desc: true)",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "univaq",
+        "x": 420,
+        "y": 640,
+        "wires": [
+            [
+                "6620f61008088297"
+            ]
+        ]
+    },
+    {
+        "id": "6620f61008088297",
+        "type": "function",
+        "z": "c86f5963f5037fab",
+        "name": "function 14",
+        "func": "var payload = msg.payload\nvar sum = 0\nvar counter = 0\nfor (let index = 0; index < payload.length; index++) {\n    const element = payload[index]['_value'];\n    sum = sum + element;\n    counter = counter + 1\n}\nmsg.payload = (sum / counter) | 0\nmsg.debug = { '1': msg.payload }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 640,
+        "wires": [
+            [
+                "6b31497a8856ca0f"
+            ]
+        ]
+    },
+    {
+        "id": "2ac2b8193acace83",
+        "type": "ui_gauge",
+        "z": "c86f5963f5037fab",
+        "name": "",
+        "group": "9bb8e820c92bb0f4",
+        "order": 0,
+        "width": "6",
+        "height": "6",
+        "gtype": "wave",
+        "title": "Plant 3",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#b30000",
+            "#00b500",
+            "#b30000"
+        ],
+        "seg1": "50",
+        "seg2": "80",
+        "diff": false,
+        "className": "",
+        "x": 860,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "6b31497a8856ca0f",
+        "type": "ui_gauge",
+        "z": "c86f5963f5037fab",
+        "name": "",
+        "group": "9bb8e820c92bb0f4",
+        "order": 0,
+        "width": "6",
+        "height": "6",
+        "gtype": "wave",
+        "title": "Plant 4",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#b30000",
+            "#00b500",
+            "#b30000"
+        ],
+        "seg1": "50",
+        "seg2": "80",
+        "diff": false,
+        "className": "",
+        "x": 860,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "edd462ac71fb6220",
+        "type": "influxdb in",
+        "z": "c86f5963f5037fab",
+        "influxdb": "f31dede1f911c00f",
+        "name": "temperature",
+        "query": "from(bucket: \"iot\")\n  |> range(start: -1m)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"temperature\")\n  |> filter(fn: (r) => r[\"_field\"] == \"value\")\n  |> sort(columns: [\"_time\"], desc: true)",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "univaq",
+        "x": 430,
+        "y": 820,
+        "wires": [
+            [
+                "8d4a71660cfa671a"
+            ]
+        ]
+    },
+    {
+        "id": "8d4a71660cfa671a",
+        "type": "function",
+        "z": "c86f5963f5037fab",
+        "name": "function 15",
+        "func": "var payload = msg.payload\nvar sum = 0\nvar counter = 0\nfor (let index = 0; index < payload.length; index++) {\n    const element = payload[index]['_value'];\n    sum = sum + element;\n    counter = counter + 1\n}\nmsg.payload = (sum/counter) | 0\nmsg.debug = { temperature : msg.payload }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 820,
+        "wires": [
+            [
+                "49ff717bc7e05056"
+            ]
+        ]
+    },
+    {
+        "id": "7a451570d2c8a154",
+        "type": "function",
+        "z": "c86f5963f5037fab",
+        "name": "function 16",
+        "func": "var payload = msg.payload\nvar sum = 0\nvar counter = 0\nfor (let index = 0; index < payload.length; index++) {\n    const element = payload[index]['_value'];\n    sum = sum + element;\n    counter = counter + 1\n}\nmsg.payload = (sum / counter) | 0\nmsg.debug = { humidity : msg.payload }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 980,
+        "wires": [
+            [
+                "3f352b31af10de10"
+            ]
+        ]
+    },
+    {
+        "id": "77f95231f1348325",
+        "type": "influxdb in",
+        "z": "c86f5963f5037fab",
+        "influxdb": "f31dede1f911c00f",
+        "name": "humidity",
+        "query": "from(bucket: \"iot\")\n  |> range(start: -1m)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"humidity\")\n  |> filter(fn: (r) => r[\"_field\"] == \"value\")\n  |> sort(columns: [\"_time\"], desc: true)",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "univaq",
+        "x": 430,
+        "y": 980,
+        "wires": [
+            [
+                "7a451570d2c8a154"
+            ]
+        ]
+    },
+    {
+        "id": "49ff717bc7e05056",
+        "type": "ui_gauge",
+        "z": "c86f5963f5037fab",
+        "name": "",
+        "group": "0316f258592a1ce1",
+        "order": 1,
+        "width": "12",
+        "height": "6",
+        "gtype": "donut",
+        "title": "Temperature",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00bfff",
+            "#00b500",
+            "#eb0000"
+        ],
+        "seg1": "19",
+        "seg2": "25",
+        "diff": false,
+        "className": "",
+        "x": 870,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "3f352b31af10de10",
+        "type": "ui_gauge",
+        "z": "c86f5963f5037fab",
+        "name": "",
+        "group": "69285099928fb720",
+        "order": 1,
+        "width": "12",
+        "height": "6",
+        "gtype": "gage",
+        "title": "Humidity",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#b30000",
+            "#00b500",
+            "#b30000"
+        ],
+        "seg1": "49",
+        "seg2": "80",
+        "diff": false,
+        "className": "",
+        "x": 860,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "64707a5dca454b2c",
+        "type": "ui_button",
+        "z": "c86f5963f5037fab",
+        "name": "",
+        "group": "e5be27229a7364d7",
+        "order": 1,
+        "width": "6",
+        "height": "3",
+        "passthru": false,
+        "label": "Plant 1 +10%",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "waterpump/increase/1",
+        "topicType": "str",
+        "x": 440,
+        "y": 1180,
+        "wires": [
+            [
+                "c7c4b5ec3b06a439"
+            ]
+        ]
+    },
+    {
+        "id": "62b383d1d482bf54",
+        "type": "ui_button",
+        "z": "c86f5963f5037fab",
+        "name": "",
+        "group": "e5be27229a7364d7",
+        "order": 5,
+        "width": "6",
+        "height": "3",
+        "passthru": false,
+        "label": "Plant 1 -10%",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "waterpump/decrease/1",
+        "topicType": "str",
+        "x": 430,
+        "y": 1240,
+        "wires": [
+            [
+                "c7c4b5ec3b06a439"
+            ]
+        ]
+    },
+    {
+        "id": "5d61f2d882dce83b",
+        "type": "ui_button",
+        "z": "c86f5963f5037fab",
+        "name": "",
+        "group": "e5be27229a7364d7",
+        "order": 2,
+        "width": "6",
+        "height": "3",
+        "passthru": false,
+        "label": "Plant 2 +10%",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "waterpump/increase/2",
+        "topicType": "str",
+        "x": 680,
+        "y": 1180,
+        "wires": [
+            [
+                "c7c4b5ec3b06a439"
+            ]
+        ]
+    },
+    {
+        "id": "b2bf4dcbf64266c9",
+        "type": "ui_button",
+        "z": "c86f5963f5037fab",
+        "name": "",
+        "group": "e5be27229a7364d7",
+        "order": 6,
+        "width": "6",
+        "height": "3",
+        "passthru": false,
+        "label": "Plant 2 -10%",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "waterpump/decrease/2",
+        "topicType": "str",
+        "x": 670,
+        "y": 1240,
+        "wires": [
+            [
+                "c7c4b5ec3b06a439"
+            ]
+        ]
+    },
+    {
+        "id": "511d881a58594e09",
+        "type": "ui_button",
+        "z": "c86f5963f5037fab",
+        "name": "",
+        "group": "e5be27229a7364d7",
+        "order": 3,
+        "width": "6",
+        "height": "3",
+        "passthru": false,
+        "label": "Plant 3 +10%",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "waterpump/increase/3",
+        "topicType": "str",
+        "x": 900,
+        "y": 1180,
+        "wires": [
+            [
+                "c7c4b5ec3b06a439"
+            ]
+        ]
+    },
+    {
+        "id": "bd9bc3969a0fc291",
+        "type": "ui_button",
+        "z": "c86f5963f5037fab",
+        "name": "",
+        "group": "e5be27229a7364d7",
+        "order": 7,
+        "width": "6",
+        "height": "3",
+        "passthru": false,
+        "label": "Plant 3 -10%",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "waterpump/decrease/3",
+        "topicType": "str",
+        "x": 890,
+        "y": 1240,
+        "wires": [
+            [
+                "c7c4b5ec3b06a439"
+            ]
+        ]
+    },
+    {
+        "id": "77514ad7a9518460",
+        "type": "ui_button",
+        "z": "c86f5963f5037fab",
+        "name": "",
+        "group": "e5be27229a7364d7",
+        "order": 4,
+        "width": "6",
+        "height": "3",
+        "passthru": false,
+        "label": "Plant 4 +10%",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "waterpump/increase/4",
+        "topicType": "str",
+        "x": 1120,
+        "y": 1180,
+        "wires": [
+            [
+                "c7c4b5ec3b06a439"
+            ]
+        ]
+    },
+    {
+        "id": "474bf36eba8d8385",
+        "type": "ui_button",
+        "z": "c86f5963f5037fab",
+        "name": "",
+        "group": "e5be27229a7364d7",
+        "order": 8,
+        "width": "6",
+        "height": "3",
+        "passthru": false,
+        "label": "Plant 4 -10%",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "waterpump/decrease/4",
+        "topicType": "str",
+        "x": 1110,
+        "y": 1240,
+        "wires": [
+            [
+                "c7c4b5ec3b06a439"
+            ]
+        ]
+    },
+    {
+        "id": "c7c4b5ec3b06a439",
+        "type": "mqtt out",
+        "z": "c86f5963f5037fab",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "263cb68dcd37c7d7",
+        "x": 770,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "01832a010d29ba39",
+        "type": "ui_button",
+        "z": "c86f5963f5037fab",
+        "name": "",
+        "group": "0316f258592a1ce1",
+        "order": 3,
+        "width": "6",
+        "height": "3",
+        "passthru": false,
+        "label": "Temperature +2º",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "conditioner/increase",
+        "topicType": "str",
+        "x": 450,
+        "y": 1380,
+        "wires": [
+            [
+                "c7c4b5ec3b06a439"
+            ]
+        ]
+    },
+    {
+        "id": "85b46f748af053ed",
+        "type": "ui_button",
+        "z": "c86f5963f5037fab",
+        "name": "",
+        "group": "0316f258592a1ce1",
+        "order": 2,
+        "width": "6",
+        "height": "3",
+        "passthru": false,
+        "label": "Temperature -2º",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "conditioner/decrease",
+        "topicType": "str",
+        "x": 440,
+        "y": 1440,
+        "wires": [
+            [
+                "c7c4b5ec3b06a439"
+            ]
+        ]
+    },
+    {
+        "id": "548148f1a47ae736",
+        "type": "ui_button",
+        "z": "c86f5963f5037fab",
+        "name": "",
+        "group": "69285099928fb720",
+        "order": 2,
+        "width": "6",
+        "height": "3",
+        "passthru": false,
+        "label": "Air Humidity +10%",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "🚿",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "humidifier/increase",
+        "topicType": "str",
+        "x": 790,
+        "y": 1380,
+        "wires": [
+            [
+                "c7c4b5ec3b06a439"
+            ]
+        ]
+    },
+    {
+        "id": "763e3e2c78594bf8",
+        "type": "ui_button",
+        "z": "c86f5963f5037fab",
+        "name": "",
+        "group": "69285099928fb720",
+        "order": 3,
+        "width": "6",
+        "height": "3",
+        "passthru": false,
+        "label": "Air Humidity -10%",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "humidifier/decrease",
+        "topicType": "str",
+        "x": 790,
+        "y": 1440,
+        "wires": [
+            [
+                "c7c4b5ec3b06a439"
+            ]
+        ]
+    },
+    {
+        "id": "857259397f217467",
+        "type": "ui_template",
+        "z": "c86f5963f5037fab",
+        "group": "2a745e6b.07df92",
+        "name": "Dashboard Theme : Modern Dark",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "format": "<div>\n    <link href=\"https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap\" rel=\"stylesheet\">\n    <style>\n        body {\n            --background: #212529;\n            --on-background: white;\n            --surface: #2d3136;\n            --on-surface: white;\n            --primary: var(--nr-dashboard-widgetColor);\n            --on-primary: white;\n            --secondary: var(--nr-dashboard-groupTextColor);\n            --accent: red;\n            --radius-s: 8px;\n            --font-weight-m: 300;\n            --font-weight-m: 500;\n            --font-weight-l: 700;\n            --space-s: 8px;\n            --space-m: 16px;\n            --space-l: 32px;\n        }\n\n        body.nr-dashboard-theme {\n            background-color: var(--background);\n            font-family: 'Montserrat', sans-serif;\n        }\n        .nr-dashboard-theme ui-card-panel {\n            background-color: var(--background);\n            border: 0;\n        }\n        .nr-dashboard-theme .nr-dashboard-button .md-button {\n            background-color: var(--primary);\n            border-radius: var(--radius-s);\n            padding: 8px !important;\n            line-height: inherit;\n            font-weight: var(--font-weight-l);\n            color: var(--on-primary);\n        }\n        .nr-dashboard-theme [ui-card-size=\"2x2\"].nr-dashboard-button .md-button {\n            display: flex;\n            flex-direction: column;\n            justify-content: center;\n            align-items: center;\n            white-space: pre-line;\n        }\n        \n        .nr-dashboard-theme .nr-dashboard-button .md-button ui-icon {\n                margin-bottom: 8px;\n        }\n        .nr-dashboard-theme .nr-dashboard-button .md-button:hover {\n            background-color: var(--secondary);\n        }\n        body.nr-dashboard-theme md-content md-card {\n            background-color: var(--surface);\n        }\n        md-card.md-default-theme, md-card {\n            border-radius: var(--radius-s);\n        }\n        .nr-dashboard-theme .nr-dashboard-gauge-titlel {\n            font-weight: var(--font-weight-l) !important;      \n        }\n        .nr-dashboard-theme ui-card-panel p.nr-dashboard-cardtitle {\n            font-weight: var(--font-weight-l);  \n            text-transform: capitalize;\n            color: var(--on-background);\n        }\n        .nr-dashboard-cardpanel > p {\n            margin-left: 0;\n            padding-left: 16px;\n        }\n        body.nr-dashboard-theme md-toolbar {\n            background-color: var(--surface);\n        }\n        .md-default-theme .md-datepicker-calendar, .md-datepicker-calendar,\n        .md-default-theme .md-calendar, .md-calendar{\n            background-color: var(--surface);\n            color: var(--on-surface);\n        }\n        .md-default-theme .md-datepicker-calendar-pane, .md-datepicker-calendar-pane{\n            border: 0;\n        }\n        .md-default-theme .md-calendar-month-label md-icon, .md-calendar-month-label md-icon, .md-default-theme .md-datepicker-input, .md-datepicker-input {\n            color: var(--on-surface);\n        }\n        body.nr-dashboard-theme md-content md-card {\n            color: var(--on-surface);\n        }\n        .nr-dashboard-theme .nr-dashboard-numeric .value {\n            background-color: var(--surface);\n            color: var(--on-surface);\n        }\n        .nr-dashboard-theme .nr-dashboard-dropdown md-select .md-select-value, .nr-dashboard-theme .nr-dashboard-dropdown md-select .md-select-value.md-select-placeholder {\n            color: var(--on-surface);\n            border-color: var(--on-surface);\n        }\n        .nr-dashboard-theme .nr-dashboard-dropdown .md-select-icon {\n            color: var(--on-surface);\n        }\n        .nr-dashboard-theme .nr-dashboard-date-picker md-input-container .md-input {\n            color: var(--on-surface);\n            border-color: var(--on-surface);\n        }\n        .nr-dashboard-theme .nr-dashboard-date-picker .md-datepicker-triangle-button .md-datepicker-expand-triangle {\n            border-top-color: var(--on-surface);\n        }\n        body.nr-dashboard-theme md-sidenav {\n            background-color: var(--surface);\n        }\n        md-list-item._md-button-wrap > div.md-button:first-child, md-list-item .md-list-item-inner {\n            background-color: var(--surface);\n        }\n    </style>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "global",
+        "className": "",
+        "x": 740,
+        "y": 1660,
+        "wires": [
+            []
+        ],
+        "icon": "node-red-dashboard/ui_colour_picker.png",
+        "info": "# Modern Dark Theme for node-red-dashboard\n\nInspired by Victor Lucachi with his [Node Red Dashboard Concept](https://dribbble.com/shots/10356530-Node-Red-Dashboard-Concept) on Dribbble. Thank you for your work.\n\n## Customize\n\n1. Go on dashboard customisation tab (At the right of Debug Console).\n2. Select the style `Dark`.\n3. Pick the color you want. Example `#66B5F8`\n\n## Buttons\n\nUse `2x2` size for buttons with icon and text on the screenshot"
+    },
+    {
+        "id": "85965edc.72971",
+        "type": "ui_template",
+        "z": "52edb7c9b84025f2",
+        "group": "2a745e6b.07df92",
+        "name": "Dashboard Theme : Modern Dark",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "format": "<div>\n    <link href=\"https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap\" rel=\"stylesheet\">\n    <style>\n        body {\n            --background: #212529;\n            --on-background: white;\n            --surface: #2d3136;\n            --on-surface: white;\n            --primary: var(--nr-dashboard-widgetColor);\n            --on-primary: white;\n            --secondary: var(--nr-dashboard-groupTextColor);\n            --accent: red;\n            --radius-s: 8px;\n            --font-weight-m: 300;\n            --font-weight-m: 500;\n            --font-weight-l: 700;\n            --space-s: 8px;\n            --space-m: 16px;\n            --space-l: 32px;\n        }\n\n        body.nr-dashboard-theme {\n            background-color: var(--background);\n            font-family: 'Montserrat', sans-serif;\n        }\n        .nr-dashboard-theme ui-card-panel {\n            background-color: var(--background);\n            border: 0;\n        }\n        .nr-dashboard-theme .nr-dashboard-button .md-button {\n            background-color: var(--primary);\n            border-radius: var(--radius-s);\n            padding: 8px !important;\n            line-height: inherit;\n            font-weight: var(--font-weight-l);\n            color: var(--on-primary);\n        }\n        .nr-dashboard-theme [ui-card-size=\"2x2\"].nr-dashboard-button .md-button {\n            display: flex;\n            flex-direction: column;\n            justify-content: center;\n            align-items: center;\n            white-space: pre-line;\n        }\n        \n        .nr-dashboard-theme .nr-dashboard-button .md-button ui-icon {\n                margin-bottom: 8px;\n        }\n        .nr-dashboard-theme .nr-dashboard-button .md-button:hover {\n            background-color: var(--secondary);\n        }\n        body.nr-dashboard-theme md-content md-card {\n            background-color: var(--surface);\n        }\n        md-card.md-default-theme, md-card {\n            border-radius: var(--radius-s);\n        }\n        .nr-dashboard-theme .nr-dashboard-gauge-titlel {\n            font-weight: var(--font-weight-l) !important;      \n        }\n        .nr-dashboard-theme ui-card-panel p.nr-dashboard-cardtitle {\n            font-weight: var(--font-weight-l);  \n            text-transform: capitalize;\n            color: var(--on-background);\n        }\n        .nr-dashboard-cardpanel > p {\n            margin-left: 0;\n            padding-left: 16px;\n        }\n        body.nr-dashboard-theme md-toolbar {\n            background-color: var(--surface);\n        }\n        .md-default-theme .md-datepicker-calendar, .md-datepicker-calendar,\n        .md-default-theme .md-calendar, .md-calendar{\n            background-color: var(--surface);\n            color: var(--on-surface);\n        }\n        .md-default-theme .md-datepicker-calendar-pane, .md-datepicker-calendar-pane{\n            border: 0;\n        }\n        .md-default-theme .md-calendar-month-label md-icon, .md-calendar-month-label md-icon, .md-default-theme .md-datepicker-input, .md-datepicker-input {\n            color: var(--on-surface);\n        }\n        body.nr-dashboard-theme md-content md-card {\n            color: var(--on-surface);\n        }\n        .nr-dashboard-theme .nr-dashboard-numeric .value {\n            background-color: var(--surface);\n            color: var(--on-surface);\n        }\n        .nr-dashboard-theme .nr-dashboard-dropdown md-select .md-select-value, .nr-dashboard-theme .nr-dashboard-dropdown md-select .md-select-value.md-select-placeholder {\n            color: var(--on-surface);\n            border-color: var(--on-surface);\n        }\n        .nr-dashboard-theme .nr-dashboard-dropdown .md-select-icon {\n            color: var(--on-surface);\n        }\n        .nr-dashboard-theme .nr-dashboard-date-picker md-input-container .md-input {\n            color: var(--on-surface);\n            border-color: var(--on-surface);\n        }\n        .nr-dashboard-theme .nr-dashboard-date-picker .md-datepicker-triangle-button .md-datepicker-expand-triangle {\n            border-top-color: var(--on-surface);\n        }\n        body.nr-dashboard-theme md-sidenav {\n            background-color: var(--surface);\n        }\n        md-list-item._md-button-wrap > div.md-button:first-child, md-list-item .md-list-item-inner {\n            background-color: var(--surface);\n        }\n    </style>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "global",
+        "className": "",
+        "x": 440,
+        "y": 280,
+        "wires": [
+            []
+        ],
+        "icon": "node-red-dashboard/ui_colour_picker.png",
+        "info": "# Modern Dark Theme for node-red-dashboard\n\nInspired by Victor Lucachi with his [Node Red Dashboard Concept](https://dribbble.com/shots/10356530-Node-Red-Dashboard-Concept) on Dribbble. Thank you for your work.\n\n## Customize\n\n1. Go on dashboard customisation tab (At the right of Debug Console).\n2. Select the style `Dark`.\n3. Pick the color you want. Example `#66B5F8`\n\n## Buttons\n\nUse `2x2` size for buttons with icon and text on the screenshot"
+    }
+]
