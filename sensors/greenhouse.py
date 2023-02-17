@@ -8,13 +8,22 @@ import paho.mqtt.client as mqtt
 
 class Greenhouse:
     def __init__(self, temperature, humidity):
+
+        # initialize default values for humidity and temperature
         self.humidity = humidity
         self.temperature = temperature
-        self.client = mqtt.Client()
+
+        # create sensors list
         self.sensors = []
+
+        # create mqtt client for publishing and subscribing
+        self.client = mqtt.Client()
+
+        # create thread for mqtt initialization to avoid blocking loop
         thread = Thread(target=self.initialize_mqtt)
         thread.start()
 
+        # creation of sensors
         counter = 1
 
         for i in range(1, 5):
@@ -44,8 +53,8 @@ class Greenhouse:
         self.client.subscribe('activate/#')
         print(f"Greenhouse connected and listening")
 
-    # <data-type>/<action> e.g. temperature/increase for non specific measurement
-    # <data-type>/<action>/<plant> e.g. moisture/increase/2
+    # activate/<data-type>/<action> e.g. temperature/increase for non specific measurement
+    # activate/<data-type>/<action>/<plant> e.g. moisture/increase/2
     def on_message(self, client, userdata, msg):
         topic_split = str(msg.topic).split('/')
 
@@ -98,15 +107,20 @@ class Greenhouse:
             self.moisture = 50
 
         def get_publish_data(self):
+
+            # Randomly changes the actual temperature of the greenhouse with probability 0.1
             rand = random.randint(1, 10)
             if rand == 1:
                 self.moisture += random.randint(-1, 1)
 
-            return f"moisture/{self.plant_id}/{self.id}", self.moisture
+            return f"moisture/{self.id}/{self.plant_id}", self.moisture
+
 
     class AirHumiditySensor(Sensor):
 
         def get_publish_data(self):
+
+            # Randomly changes the actual temperature of the greenhouse with probability 0.1
             rand = random.randint(1, 10)
             if rand == 1:
                 self.outer.humidity += random.randint(-1, 1)
@@ -116,6 +130,8 @@ class Greenhouse:
     class TemperatureSensor(Sensor):
 
         def get_publish_data(self):
+
+            # Randomly changes the actual temperature of the greenhouse with probability 0.1
             rand = random.randint(1, 10)
             if rand == 1:
                 self.outer.temperature += random.randint(-1, 1)

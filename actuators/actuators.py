@@ -6,11 +6,12 @@ import paho.mqtt.client as mqtt
 
 
 def main():
-    for i in range(1,5):
+    for i in range(1, 5):
         water_pump = WaterPump(i)
 
     conditioner = Conditioner()
     humidifier = AirHumidifier()
+
 
 class Actuator(ABC):
 
@@ -18,7 +19,6 @@ class Actuator(ABC):
         self.client = mqtt.Client()
         thread = Thread(target=self.initialize_mqtt)
         thread.start()
-
 
     def initialize_mqtt(self):
         self.client.on_connect = self.on_connect
@@ -44,6 +44,7 @@ class Actuator(ABC):
     def decrease(self):
         pass
 
+
 class Conditioner(Actuator):
 
     def increase(self):
@@ -66,6 +67,7 @@ class Conditioner(Actuator):
             self.increase()
         elif topic_split[1] == 'decrease':
             self.decrease()
+
 
 class WaterPump(Actuator):
 
@@ -116,7 +118,6 @@ class AirHumidifier(Actuator):
             self.increase()
         elif topic_split[1] == 'decrease':
             self.decrease()
-
 
 
 if __name__ == '__main__':
