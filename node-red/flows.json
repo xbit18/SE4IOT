@@ -1985,7 +1985,7 @@
         "color": "",
         "bgcolor": "",
         "className": "",
-        "icon": "🚿",
+        "icon": "",
         "payload": "",
         "payloadType": "str",
         "topic": "humidifier/increase",
