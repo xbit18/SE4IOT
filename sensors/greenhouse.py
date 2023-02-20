@@ -1,12 +1,17 @@
+import math
 import random
 from abc import abstractmethod
+import datetime
 from threading import Thread
 from time import sleep
 
 import paho.mqtt.client as mqtt
+from numpy import interp
 
 
 class Greenhouse:
+    light = 0
+
     def __init__(self, temperature, humidity):
 
         # initialize default values for humidity and temperature
@@ -40,6 +45,8 @@ class Greenhouse:
             humidity_sens = self.AirHumiditySensor(id=counter, type='humidity', outer=self)
             self.sensors.append(humidity_sens)
             counter += 1
+
+        self.sensors.append(self.LightSensor(id=counter, type='light', outer=self))
 
         self.run()
 
@@ -78,6 +85,13 @@ class Greenhouse:
                         sensor.moisture += 10
                     elif topic_split[2] == 'decrease':
                         sensor.moisture -= 10
+        elif topic_split[1] == 'light':
+            for sensor in self.sensors:
+                if isinstance(sensor, self.LightSensor):
+                    if topic_split[2] == 'on':
+                        sensor.light_on = True
+                    else:
+                        sensor.light_on = False
 
     def run(self):
         while True:
@@ -107,7 +121,6 @@ class Greenhouse:
             self.moisture = 50
 
         def get_publish_data(self):
-
             # Randomly changes the actual temperature of the greenhouse with probability 0.1
             rand = random.randint(1, 10)
             if rand == 1:
@@ -115,11 +128,9 @@ class Greenhouse:
 
             return f"moisture/{self.id}/{self.plant_id}", self.moisture
 
-
     class AirHumiditySensor(Sensor):
 
         def get_publish_data(self):
-
             # Randomly changes the actual temperature of the greenhouse with probability 0.1
             rand = random.randint(1, 10)
             if rand == 1:
@@ -130,13 +141,47 @@ class Greenhouse:
     class TemperatureSensor(Sensor):
 
         def get_publish_data(self):
-
             # Randomly changes the actual temperature of the greenhouse with probability 0.1
             rand = random.randint(1, 10)
             if rand == 1:
                 self.outer.temperature += random.randint(-1, 1)
 
             return f"temperature/{self.id}", self.outer.temperature + random.randint(-1, 1)
+
+    class LightSensor(Sensor):
+        light_on = False
+        def get_publish_data(self):
+            if self.light_on:
+                self.outer.light = 255
+            else:
+                self.outer.light = self.getLightValue()
+
+            return f"light/{self.id}", self.outer.light
+
+        def getLightValue(self):
+            hour = datetime.datetime.now().hour
+
+            minute = datetime.datetime.now().minute
+
+            value = hour * 60 + minute  # 0 - 1440
+
+            mapped_value = interp(value, [0, 1440], [0, 360])
+
+            sin = math.sin(math.radians(mapped_value) + math.pi * (3 / 2))
+
+            light_value = interp(sin, [-1, 1], [0, 255])
+
+            rand = random.randint(0, 4)  # 0.2 probability of oscillating around function
+
+            if rand == 0:
+                value = light_value + random.randint(-10, 10)
+                if value < 0:  # value can't be negative
+                    value = 0
+                if value > 255:  # value can't be negative
+                    value = 255
+            else:
+                value = light_value
+            return value
 
 
 if __name__ == '__main__':

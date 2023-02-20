@@ -11,6 +11,7 @@ def main():
 
     conditioner = Conditioner()
     humidifier = AirHumidifier()
+    light = Light()
 
 
 class Actuator(ABC):
@@ -36,11 +37,9 @@ class Actuator(ABC):
     def on_message(self, client, userdata, msg):
         pass
 
-    @abstractmethod
     def increase(self):
         pass
 
-    @abstractmethod
     def decrease(self):
         pass
 
@@ -52,7 +51,7 @@ class Conditioner(Actuator):
         self.client.publish('activate/temperature/increase')
 
     def decrease(self):
-        print(f'Decreasing humidity')
+        print(f'Decreasing temperature')
         self.client.publish('activate/temperature/decrease')
 
     def on_connect(self, client, userdata, flags, rc):
@@ -119,6 +118,26 @@ class AirHumidifier(Actuator):
         elif topic_split[1] == 'decrease':
             self.decrease()
 
+class Light(Actuator):
+    def on_connect(self, client, userdata, flags, rc):
+        self.client.subscribe('lightbulb')
+        print(f"Light connected and listening")
+
+    def on_message(self, client, userdata, msg):
+        print(f"Message received {msg.topic}")
+
+        payload = bytes.decode(msg.payload)
+        if payload == 'true':
+            self.on()
+        elif payload == 'false':
+            self.off()
+
+    def on(self):
+        print(f'Light on')
+        self.client.publish(f'activate/light/on')
+    def off(self):
+        print(f'Light off')
+        self.client.publish(f'activate/light/off')
 
 if __name__ == '__main__':
     main()

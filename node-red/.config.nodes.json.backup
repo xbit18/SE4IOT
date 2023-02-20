@@ -676,5 +676,62 @@
                 "file": "/data/node_modules/node-red-dashboard/nodes/ui_spacer.js"
             }
         }
+    },
+    "node-red-contrib-loop": {
+        "name": "node-red-contrib-loop",
+        "version": "1.0.1",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "loop": {
+                "name": "loop",
+                "types": [
+                    "loop"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-loop",
+                "file": "/data/node_modules/node-red-contrib-loop/loop.js"
+            }
+        }
+    },
+    "@studiobox/node-red-contrib-ui-widget-thermometer": {
+        "name": "@studiobox/node-red-contrib-ui-widget-thermometer",
+        "version": "0.5.4",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "ui_widget_thermometer": {
+                "name": "ui_widget_thermometer",
+                "types": [
+                    "ui_widget_thermometer"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "@studiobox/node-red-contrib-ui-widget-thermometer",
+                "file": "/data/node_modules/@studiobox/node-red-contrib-ui-widget-thermometer/nodes/ui_widget_thermometer.js"
+            }
+        }
+    },
+    "@studiobox/node-red-contrib-ui-widget-bulb-basic": {
+        "name": "@studiobox/node-red-contrib-ui-widget-bulb-basic",
+        "version": "0.2.0",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "ui_widget_thermometer": {
+                "name": "ui_widget_thermometer",
+                "types": [
+                    "ui_widget_bulb_basic"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "@studiobox/node-red-contrib-ui-widget-bulb-basic",
+                "file": "/data/node_modules/@studiobox/node-red-contrib-ui-widget-bulb-basic/nodes/ui_widget_bulb_basic.js"
+            }
+        }
     }
 }
