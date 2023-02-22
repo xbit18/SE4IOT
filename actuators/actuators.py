@@ -11,7 +11,7 @@ def main():
 
     conditioner = Conditioner()
     humidifier = AirHumidifier()
-    light = Light()
+    light = Lightbulb()
 
 
 class Actuator(ABC):
@@ -118,7 +118,7 @@ class AirHumidifier(Actuator):
         elif topic_split[1] == 'decrease':
             self.decrease()
 
-class Light(Actuator):
+class Lightbulb(Actuator):
     def on_connect(self, client, userdata, flags, rc):
         self.client.subscribe('lightbulb')
         print(f"Light connected and listening")
