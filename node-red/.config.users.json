@@ -18,13 +18,14 @@
         },
         "menu-menu-item-sidebar": true,
         "debug": {
-            "filter": "filterSelected",
+            "filter": "filterCurrent",
             "filteredNodes": [
                 "fd7cabb11c97fea5",
                 "26a7500f9ecc6423"
             ]
         },
-        "menu-deploymenu-item-flow": false,
-        "menu-deploymenu-item-full": true
+        "menu-deploymenu-item-flow": true,
+        "menu-deploymenu-item-full": false,
+        "menu-menu-item-palette": true
     }
 }

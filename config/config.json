@@ -1,0 +1,13 @@
+{
+  "sensors": {
+    "temperature": 4,
+    "humidity": 4,
+    "light": 1,
+    "moisture": 4
+  },
+  "thresholds": {
+    "temperature": [15,35],
+    "humidity": [50,60],
+    "moisture": [50,80]
+  }
+}

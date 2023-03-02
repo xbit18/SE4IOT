@@ -5,6 +5,7 @@ services:
   mosquitto:
     image: eclipse-mosquitto:latest
     container_name: mosquitto
+    hostname: mosquitto
     volumes:
       - ./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
     restart: always
@@ -25,6 +26,20 @@ services:
     networks:
       se4iot:
         ipv4_address: 172.20.0.101
+    depends_on:
+      - mosquitto
+
+  config:
+    image: config
+    container_name: config
+    hostname: config
+    build:
+      context: ./config/
+      dockerfile: Dockerfile
+    restart: always
+    networks:
+      se4iot:
+        ipv4_address: 172.20.0.108
     depends_on:
       - mosquitto
 

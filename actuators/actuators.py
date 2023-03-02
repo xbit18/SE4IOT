@@ -24,7 +24,7 @@ class Actuator(ABC):
     def initialize_mqtt(self):
         self.client.on_connect = self.on_connect
         self.client.on_message = self.on_message
-        self.client.connect('172.20.0.100', 1883, 60)
+        self.client.connect('mosquitto', 1883, 60)
         self.client.loop_forever()
 
     @abstractmethod

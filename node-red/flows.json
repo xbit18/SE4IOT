@@ -24,10 +24,18 @@
         "env": []
     },
     {
+        "id": "fbc0d0b01941c30f",
+        "type": "tab",
+        "label": "Automation",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "263cb68dcd37c7d7",
         "type": "mqtt-broker",
         "name": "mosquitto",
-        "broker": "172.20.0.100",
+        "broker": "mosquitto",
         "port": "1883",
         "clientid": "",
         "autoConnect": true,
@@ -302,8 +310,8 @@
         "name": "spacer",
         "group": "3bf22505be556ef9",
         "order": 1,
-        "width": 7,
-        "height": 1
+        "width": "",
+        "height": ""
     },
     {
         "id": "d5eab1f10d86118b",
@@ -312,8 +320,8 @@
         "name": "spacer",
         "group": "3bf22505be556ef9",
         "order": 2,
-        "width": 7,
-        "height": 1
+        "width": "",
+        "height": ""
     },
     {
         "id": "4b21e3829869380e",
@@ -1103,7 +1111,7 @@
         "retentionPolicy": "",
         "org": "univaq",
         "x": 380,
-        "y": 100,
+        "y": 320,
         "wires": [
             [
                 "54b109a962717ed2"
@@ -1115,7 +1123,7 @@
         "type": "debug",
         "z": "e773841c056590f4",
         "name": "debug 4",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -1124,13 +1132,14 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 860,
-        "y": 140,
+        "y": 280,
         "wires": []
     },
     {
         "id": "423419e26896b5d8",
         "type": "inject",
         "z": "e773841c056590f4",
+        "d": true,
         "name": "",
         "props": [],
         "repeat": "60",
@@ -1163,7 +1172,7 @@
         "finalize": "",
         "libs": [],
         "x": 620,
-        "y": 100,
+        "y": 320,
         "wires": [
             [
                 "afc489fa3146289d",
@@ -1194,14 +1203,10 @@
         "repair": false,
         "outputs": 2,
         "x": 890,
-        "y": 40,
+        "y": 180,
         "wires": [
-            [
-                "ebfd24bf0473e06e"
-            ],
-            [
-                "33c39b33e27dd271"
-            ]
+            [],
+            []
         ]
     },
     {
@@ -1252,7 +1257,7 @@
         "retentionPolicy": "",
         "org": "univaq",
         "x": 380,
-        "y": 300,
+        "y": 440,
         "wires": [
             [
                 "3606f7b4f81e1599"
@@ -1264,7 +1269,7 @@
         "type": "debug",
         "z": "e773841c056590f4",
         "name": "debug 5",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -1273,7 +1278,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 860,
-        "y": 340,
+        "y": 480,
         "wires": []
     },
     {
@@ -1288,7 +1293,7 @@
         "finalize": "",
         "libs": [],
         "x": 620,
-        "y": 300,
+        "y": 440,
         "wires": [
             [
                 "fd3f980f1d0c241c",
@@ -1319,7 +1324,7 @@
         "repair": false,
         "outputs": 2,
         "x": 890,
-        "y": 240,
+        "y": 380,
         "wires": [
             [
                 "b2d3303f52e09d1c"
@@ -1377,7 +1382,7 @@
         "retentionPolicy": "",
         "org": "univaq",
         "x": 380,
-        "y": 500,
+        "y": 640,
         "wires": [
             [
                 "5c26759137d1a7e6"
@@ -1398,7 +1403,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 860,
-        "y": 540,
+        "y": 680,
         "wires": []
     },
     {
@@ -1413,7 +1418,7 @@
         "finalize": "",
         "libs": [],
         "x": 620,
-        "y": 500,
+        "y": 640,
         "wires": [
             [
                 "221f400b41d6a8dc",
@@ -1444,7 +1449,7 @@
         "repair": false,
         "outputs": 2,
         "x": 890,
-        "y": 440,
+        "y": 580,
         "wires": [
             [
                 "e990e222c0f8be42"
@@ -1502,7 +1507,7 @@
         "retentionPolicy": "",
         "org": "univaq",
         "x": 380,
-        "y": 700,
+        "y": 780,
         "wires": [
             [
                 "9e96a043f3783b3b"
@@ -1523,7 +1528,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 860,
-        "y": 740,
+        "y": 820,
         "wires": []
     },
     {
@@ -1538,7 +1543,7 @@
         "finalize": "",
         "libs": [],
         "x": 620,
-        "y": 700,
+        "y": 780,
         "wires": [
             [
                 "934f14f952b2e148",
@@ -1569,7 +1574,7 @@
         "repair": false,
         "outputs": 2,
         "x": 890,
-        "y": 640,
+        "y": 720,
         "wires": [
             [
                 "e34ed86b945fe0fe"
@@ -1639,7 +1644,7 @@
         "type": "debug",
         "z": "e773841c056590f4",
         "name": "debug 8",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -1764,7 +1769,7 @@
         "type": "debug",
         "z": "e773841c056590f4",
         "name": "debug 9",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3283,6 +3288,383 @@
         "y": 1340,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "dd78f30cbf7a4142",
+        "type": "http request",
+        "z": "fbc0d0b01941c30f",
+        "name": "Get sensor number",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 510,
+        "y": 300,
+        "wires": [
+            [
+                "cb4e4a39a39610e6"
+            ]
+        ]
+    },
+    {
+        "id": "8a2f51784cdd143b",
+        "type": "loop",
+        "z": "fbc0d0b01941c30f",
+        "name": "Loop on measurements",
+        "kind": "enum",
+        "count": "",
+        "initial": "1",
+        "step": "1",
+        "condition": "",
+        "conditionType": "js",
+        "when": "before",
+        "enumeration": "[\"temperature\",\"humidity\",\"moisture\"]",
+        "enumerationType": "json",
+        "limit": "",
+        "loopPayload": "loop-val",
+        "finalPayload": "final-last",
+        "x": 430,
+        "y": 80,
+        "wires": [
+            [],
+            [
+                "56ebe2fcda3b6f31"
+            ]
+        ]
+    },
+    {
+        "id": "56ebe2fcda3b6f31",
+        "type": "function",
+        "z": "fbc0d0b01941c30f",
+        "name": "Set measurement",
+        "func": "msg.url = \"http://config:5008/config/sensors/\" + msg.loop.value\nmsg.measurement = msg.loop.value\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 300,
+        "wires": [
+            [
+                "dd78f30cbf7a4142",
+                "91e55caffcfaa774"
+            ]
+        ]
+    },
+    {
+        "id": "5725f48d9456f7b6",
+        "type": "inject",
+        "z": "fbc0d0b01941c30f",
+        "name": "",
+        "props": [],
+        "repeat": "60",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 1950,
+        "y": 520,
+        "wires": [
+            [
+                "be0e19115f4e81a3"
+            ]
+        ]
+    },
+    {
+        "id": "c783b8e1bbdef085",
+        "type": "loop",
+        "z": "fbc0d0b01941c30f",
+        "name": "Loop on moisture sensors",
+        "kind": "fcnt",
+        "count": "",
+        "initial": "",
+        "step": "",
+        "condition": "",
+        "conditionType": "js",
+        "when": "before",
+        "enumeration": "enum",
+        "enumerationType": "msg",
+        "limit": "",
+        "loopPayload": "loop-val",
+        "finalPayload": "final-count",
+        "x": 1230,
+        "y": 100,
+        "wires": [
+            [],
+            [
+                "f047312cb9796a18"
+            ]
+        ]
+    },
+    {
+        "id": "cb4e4a39a39610e6",
+        "type": "function",
+        "z": "fbc0d0b01941c30f",
+        "name": "Set iter number",
+        "func": "var counter = msg.payload.data\nmsg.count = counter\nmsg.step = 1\nmsg.initial = 1\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 300,
+        "wires": [
+            [
+                "1485a3e86ec64335"
+            ]
+        ]
+    },
+    {
+        "id": "f047312cb9796a18",
+        "type": "function",
+        "z": "fbc0d0b01941c30f",
+        "name": "Generate query (moisture)",
+        "func": "if(msg.measurement == 'moisture'){    \n    msg.query = `from(bucket: \"iot\")\n                |> range(start: -1m)\n                |> filter(fn: (r) => r[\"_measurement\"] == \"${msg.measurement}\")\n                |> filter(fn: (r) => r[\"_field\"] == \"value\")\n                |> filter(fn: (r) => r[\"plant_id\"] == \"${msg.payload}\")\n                |> sort(columns: [\"_time\"], desc: true)`\n}\nmsg.plant_id = msg.payload\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1230,
+        "y": 220,
+        "wires": [
+            [
+                "c783b8e1bbdef085",
+                "5a9f82ae93507b34"
+            ]
+        ]
+    },
+    {
+        "id": "91e55caffcfaa774",
+        "type": "delay",
+        "z": "fbc0d0b01941c30f",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "10",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 230,
+        "y": 80,
+        "wires": [
+            [
+                "8a2f51784cdd143b"
+            ]
+        ]
+    },
+    {
+        "id": "5a9f82ae93507b34",
+        "type": "influxdb in",
+        "z": "fbc0d0b01941c30f",
+        "influxdb": "f31dede1f911c00f",
+        "name": "query",
+        "query": "from(bucket: \"iot\")\n                |> range(start: -1m)\n                |> filter(fn: (r) => r[\"_measurement\"] == \"moisture\")\n                |> filter(fn: (r) => r[\"_field\"] == \"value\")\n                |> filter(fn: (r) => r[\"plant_id\"] == \"{moisture:3}\")\n                |> sort(columns: [\"_time\"], desc: true)\";",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "univaq",
+        "x": 1450,
+        "y": 300,
+        "wires": [
+            [
+                "8113f4cc5f06f5cc"
+            ]
+        ]
+    },
+    {
+        "id": "8113f4cc5f06f5cc",
+        "type": "function",
+        "z": "fbc0d0b01941c30f",
+        "name": "Compute mean value",
+        "func": "var payload = msg.payload\nvar sum = 0\nvar counter = 0\nfor (let index = 0; index < payload.length; index++) {\n    const element = payload[index]['_value'];\n    sum = sum + element;\n    counter = counter + 1\n}\nmsg.mean = (sum/counter) | 0\nmsg.debug = \"{\" + msg.measurement + \":\" + msg.payload + \"}\"\nmsg.url = \"http://config:5008/config/thresholds/\" + msg.measurement\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1620,
+        "y": 300,
+        "wires": [
+            [
+                "6d498dbcc1eb32e1"
+            ]
+        ]
+    },
+    {
+        "id": "bbf7a1daeaf12bee",
+        "type": "mqtt out",
+        "z": "fbc0d0b01941c30f",
+        "name": "Actuators",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "263cb68dcd37c7d7",
+        "x": 2240,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "1485a3e86ec64335",
+        "type": "switch",
+        "z": "fbc0d0b01941c30f",
+        "name": "Check if moisture or not",
+        "property": "measurement",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "moisture",
+                "vt": "str"
+            },
+            {
+                "t": "neq",
+                "v": "moisture",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 910,
+        "y": 300,
+        "wires": [
+            [
+                "c783b8e1bbdef085"
+            ],
+            [
+                "44e221846543b0bf"
+            ]
+        ]
+    },
+    {
+        "id": "44e221846543b0bf",
+        "type": "function",
+        "z": "fbc0d0b01941c30f",
+        "name": "Generate query (humidity, temperature)",
+        "func": "msg.query = `from(bucket: \"iot\")\n                |> range(start: -1m)\n                |> filter(fn: (r) => r[\"_measurement\"] == \"${msg.measurement}\")\n                |> filter(fn: (r) => r[\"_field\"] == \"value\")\n                |> sort(columns: [\"_time\"], desc: true)`\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1260,
+        "y": 380,
+        "wires": [
+            [
+                "5a9f82ae93507b34"
+            ]
+        ]
+    },
+    {
+        "id": "3230eff157053ab0",
+        "type": "link in",
+        "z": "fbc0d0b01941c30f",
+        "name": "link in 1",
+        "links": [
+            "be0e19115f4e81a3"
+        ],
+        "x": 25,
+        "y": 80,
+        "wires": [
+            [
+                "91e55caffcfaa774"
+            ]
+        ]
+    },
+    {
+        "id": "be0e19115f4e81a3",
+        "type": "link out",
+        "z": "fbc0d0b01941c30f",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "3230eff157053ab0"
+        ],
+        "x": 1375,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "3b2059454a5ced97",
+        "type": "function",
+        "z": "fbc0d0b01941c30f",
+        "name": "Check for adjustment",
+        "func": "msg.down = msg.payload.data[0]\nmsg.up = msg.payload.data[1]\nvar temp = new Object()\ntemp.payload = msg.mean\ntemp.up = msg.up\ntemp.down = msg.down\ntemp.measurement = msg.measurement\nif(msg.plant_id){\n    temp.plant_id = msg.plant_id\n}\nmsg = temp\n\nvar map = {\n    \"moisture\": \"waterpump\",\n    \"humidity\": \"humidifier\",\n    \"temperature\": \"conditioner\"\n}\nvar topic = \"nothing\"\nmsg.debug = `No adjustment needed for ${msg.measurement}`\nif(msg.plant_id){\n    msg.debug += msg.plant_id\n}\nif(msg.payload < msg.down){\n    topic = map[msg.measurement] + \"/increase\"\n    if (msg.plant_id) {\n        topic += \"/\" + msg.plant_id\n    }\n    msg.debug = `Topic: ${topic}, Measurement: ${msg.measurement}, Value: ${msg.payload}, Up: ${msg.up}, Down: ${msg.down}`\n} else if(msg.payload > msg.up){\n    topic = \"/decrease\"\n    if (msg.plant_id) {\n        topic += \"/\" + msg.plant_id\n    }\n    msg.debug = `Topic: ${topic}, Measurement: ${msg.measurement}, Value: ${msg.payload}, Up: ${msg.up}, Down: ${msg.down}`\n}\n\nmsg.topic = topic\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2020,
+        "y": 300,
+        "wires": [
+            [
+                "9bab21cd25544483",
+                "bbf7a1daeaf12bee"
+            ]
+        ]
+    },
+    {
+        "id": "9bab21cd25544483",
+        "type": "debug",
+        "z": "fbc0d0b01941c30f",
+        "name": "debug 15",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "debug",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2240,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "6d498dbcc1eb32e1",
+        "type": "http request",
+        "z": "fbc0d0b01941c30f",
+        "name": "Get thresholds",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1820,
+        "y": 300,
+        "wires": [
+            [
+                "3b2059454a5ced97"
+            ]
         ]
     }
 ]
