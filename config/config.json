@@ -3,7 +3,7 @@
     "temperature": 4,
     "humidity": 4,
     "light": 1,
-    "moisture": 4
+    "moisture": 8
   },
   "thresholds": {
     "temperature": [15,35],

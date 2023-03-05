@@ -28,20 +28,25 @@ services:
         ipv4_address: 172.20.0.101
     depends_on:
       - mosquitto
+      - config
 
   config:
-    image: config
+    image: xbit18/config
     container_name: config
     hostname: config
     build:
       context: ./config/
       dockerfile: Dockerfile
+    volumes:
+      - ./config/config.json:/app/config.json
     restart: always
     networks:
       se4iot:
         ipv4_address: 172.20.0.108
     depends_on:
       - mosquitto
+      - node-red
+      - grafana
 
   actuators:
     image: xbit18/actuators
@@ -59,6 +64,7 @@ services:
   influxdb:
     image: influxdb:latest
     container_name: influxdb
+    hostname: influx
     restart: always
     environment:
       # Use these same configurations parameters in your telegraf configuration, mytelegraf.conf.
@@ -76,6 +82,7 @@ services:
 
   node-red:
     image: nodered/node-red:latest
+    hostname: nodered
     container_name: node-red
     restart: always
     ports:
@@ -87,12 +94,12 @@ services:
       - ./node-red:/data
     depends_on:
       - mosquitto
-      - sensors
       - influxdb
 
   grafana:
     image: grafana/grafana:latest
     container_name: grafana
+    hostname: grafana
     volumes:
       - ./grafana:/var/lib/grafana
       - ./grafana.ini:/etc/grafana/grafana.ini
