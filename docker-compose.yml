@@ -19,9 +19,9 @@ services:
   sensors:
     image: xbit18/sensors
     container_name: iot-sensors
-    build:
-      context: ./sensors/
-      dockerfile: Dockerfile
+#    build:
+#      context: ./sensors/
+#      dockerfile: Dockerfile
     restart: always
     networks:
       se4iot:
@@ -34,9 +34,9 @@ services:
     image: xbit18/config
     container_name: config
     hostname: config
-    build:
-      context: ./config/
-      dockerfile: Dockerfile
+#    build:
+#      context: ./config/
+#      dockerfile: Dockerfile
     volumes:
       - ./config/config.json:/app/config.json
     restart: always
@@ -51,9 +51,9 @@ services:
   actuators:
     image: xbit18/actuators
     container_name: iot-actuators
-    build:
-      context: ./actuators/
-      dockerfile: Dockerfile
+#    build:
+#      context: ./actuators/
+#      dockerfile: Dockerfile
     restart: always
     networks:
       se4iot:
